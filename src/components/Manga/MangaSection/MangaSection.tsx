@@ -39,7 +39,7 @@ const MangaSection = () => {
   }
 
   return (
-    <section>
+    <section data-testid="MangaSection">
       <MangaSectionWrapper>
         <Typography className="title" component="h4" variant="h4">
           Manga

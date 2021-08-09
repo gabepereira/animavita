@@ -16,7 +16,6 @@ const CharactersSection = () => {
       try {
         const { data } = await searchCharacters({ limit: FETCH_LIMIT });
 
-        console.log(data);
         const parsedData = data.data.map(({ id, attributes }) => ({
           id,
           image: attributes.image.original,
@@ -25,7 +24,6 @@ const CharactersSection = () => {
           otherNames: attributes.otherNames,
         }));
 
-        console.log(parsedData);
         setResults(parsedData);
       } catch (error) {
         console.error(error);
@@ -43,7 +41,7 @@ const CharactersSection = () => {
 
   return (
     <section>
-      <CharactersSectionWrapper>
+      <CharactersSectionWrapper data-testid="CharactersSection">
         <Typography className="title" component="h4" variant="h4">
           CHARACTERS
         </Typography>

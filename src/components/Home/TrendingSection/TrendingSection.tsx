@@ -17,7 +17,6 @@ const Trending = () => {
     const fetchTrending = async () => {
       try {
         const { data } = await getTrending();
-        console.log(data);
 
         setTrending(data.data);
       } catch (error) {
@@ -37,7 +36,7 @@ const Trending = () => {
   }
 
   return (
-    <section>
+    <section data-testid="TrendingSection">
       {/* Main trending tv show section */}
       {mostTrending && <TrendingHero data={mostTrending} />}
 

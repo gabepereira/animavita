@@ -1,17 +1,23 @@
 import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'styles/theme';
-import DataList, { Props } from './DataList';
+import TrendingCard, { Props } from '.';
 
-describe('<DataList />', () => {
+describe('<TrendingCard />', () => {
   const defaultProps = {
-    data: [],
+    data: {
+      id: 'id',
+      attributes: {
+        posterImage: { small: 'posterImage' },
+        canonicalTitle: 'title',
+      },
+    },
   };
 
   const setup = (props?: Props) => {
     const utils = render(
       <ThemeProvider theme={theme}>
-        <DataList {...defaultProps} {...props} />
+        <TrendingCard {...defaultProps} {...props} />
       </ThemeProvider>
     );
 
@@ -21,10 +27,10 @@ describe('<DataList />', () => {
   };
 
   describe('Rendering', () => {
-    it('should render the <DataList> component', () => {
+    it('should render the <TrendingCard> component', () => {
       const { getByTestId } = setup();
 
-      expect(getByTestId('DataList')).toBeInTheDocument();
+      expect(getByTestId('TrendingCard')).toBeInTheDocument();
     });
   });
 });

@@ -17,12 +17,8 @@ const SearchInput = () => {
   const [results, setResults] = React.useState<ITVShow[]>([]);
 
   const handleSearch = async (value: string) => {
-    console.log(value);
-
     try {
       const { data } = await searchAnimes(value, FETCH_LIMIT);
-
-      console.log(data);
 
       setResults(data.data);
     } catch (error) {
@@ -31,7 +27,7 @@ const SearchInput = () => {
   };
 
   return (
-    <div style={{ zIndex: 1 }}>
+    <div data-testid="SearchInput" style={{ zIndex: 1 }}>
       <InputWrapper>
         <Input
           onChange={(e) => handleSearch(e.target.value)}

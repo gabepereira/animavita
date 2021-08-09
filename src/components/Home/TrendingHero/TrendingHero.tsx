@@ -3,21 +3,21 @@ import { Typography, Button } from '@material-ui/core';
 import { ITVShow } from 'models/TVShow';
 import { TrendingHeroWrapper, Cover, InfoBackdrop, InfoPanel } from './styles';
 
-interface Props {
+export interface Props {
   data: ITVShow;
 }
 
 const DESCRIPTION_CHAR_LIMIT = 200;
 
 const TrendingHero: React.FC<Props> = ({ data: { attributes } }) => {
-  const formatedDescription = attributes.description.substring(
+  const formatedDescription = attributes.description?.substring(
     0,
     DESCRIPTION_CHAR_LIMIT
   );
 
   return (
-    <TrendingHeroWrapper>
-      <Cover src={attributes.coverImage.original} alt="Cover Image" />
+    <TrendingHeroWrapper data-testid="TrendingHero">
+      <Cover src={attributes.coverImage?.original} alt="Cover Image" />
 
       <InfoBackdrop>
         <InfoPanel>

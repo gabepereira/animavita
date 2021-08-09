@@ -1,13 +1,13 @@
 import ResultCard, { ResultItemProps } from 'components/UI/ResultCard';
 import { DataListWrapper } from './styles';
 
-interface Props {
+export interface Props {
   data: ResultItemProps[];
 }
 
 const DataList: React.FC<Props> = ({ data }) => {
   return (
-    <DataListWrapper>
+    <DataListWrapper data-testid="DataList">
       {data.map(({ id, ...props }) => (
         <ResultCard
           key={id}

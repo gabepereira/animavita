@@ -45,7 +45,7 @@ export const InfoPanel = styled.div`
   }
 
   .description {
-    width: 500px;
+    max-width: 500px;
     margin-bottom: 24px;
   }
 
