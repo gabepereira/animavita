@@ -1,15 +1,11 @@
 import React from 'react';
 import { useScreenClass } from 'react-grid-system';
 import { Typography } from '@material-ui/core';
-import APIService from 'services/APIService';
+import { getTrending } from 'services/SearchService';
 import { ITVShow } from 'models/TVShow';
 import TrendingHero from 'components/Home/TrendingHero';
 import TrendingCard from 'components/Home/TrendingCard';
-import {
-  TrendinSectionWrapper,
-  OtherTrendingsWrapper,
-  TrendingList,
-} from './styles';
+import { OtherTrendingsWrapper, TrendingList } from './styles';
 
 const Trending = () => {
   const screenClass = useScreenClass();
@@ -19,7 +15,6 @@ const Trending = () => {
 
   React.useEffect(() => {
     const fetchTrending = async () => {
-      const { getTrending } = new APIService();
       try {
         const { data } = await getTrending();
         console.log(data);
@@ -37,10 +32,14 @@ const Trending = () => {
 
   const [mostTrending, ...otherTrendings] = trending;
 
+  if (loading) {
+    return null;
+  }
+
   return (
-    <TrendinSectionWrapper>
+    <section>
       {/* Main trending tv show section */}
-      {!loading && mostTrending && <TrendingHero data={mostTrending} />}
+      {mostTrending && <TrendingHero data={mostTrending} />}
 
       {/* Other trending tv shows section */}
       <OtherTrendingsWrapper>
@@ -54,7 +53,7 @@ const Trending = () => {
           ))}
         </TrendingList>
       </OtherTrendingsWrapper>
-    </TrendinSectionWrapper>
+    </section>
   );
 };
 

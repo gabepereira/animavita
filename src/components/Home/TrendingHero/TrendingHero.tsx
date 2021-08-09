@@ -10,7 +10,7 @@ interface Props {
 const DESCRIPTION_CHAR_LIMIT = 200;
 
 const TrendingHero: React.FC<Props> = ({ data: { attributes } }) => {
-  const description = attributes.description.substring(
+  const formatedDescription = attributes.description.substring(
     0,
     DESCRIPTION_CHAR_LIMIT
   );
@@ -30,7 +30,7 @@ const TrendingHero: React.FC<Props> = ({ data: { attributes } }) => {
           </Typography>
 
           <Typography className="description" variant="h5">
-            {`${description}...`}
+            {`${formatedDescription}...`}
           </Typography>
 
           <Button size="large" variant="contained">

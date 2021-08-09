@@ -17,7 +17,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background-color: #FFF;
+    background-color: black;
+    overflow-y: scroll;
   }
 `;
 

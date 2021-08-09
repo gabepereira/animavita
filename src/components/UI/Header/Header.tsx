@@ -1,29 +1,26 @@
 import Link from 'next/link';
+import { useScreenClass } from 'react-grid-system';
 import { headerLinks, isPageActive } from 'utils/sitemap';
-import {
-  HeaderWrapper,
-  Logo,
-  LogoWrapper,
-  HeaderNav,
-  HeaderLink,
-} from './styles';
+import { HeaderWrapper, Logo, LogoWrapper, HeaderLink } from './styles';
 import SearchInput from 'components/Home/SearchInput';
 
 // <Header> component
 const Header = () => {
+  const screenClass = useScreenClass();
+
   return (
     <HeaderWrapper data-testid="Header">
       <LogoWrapper>
         <Logo>AnimaVita</Logo>
 
         {/* Header nav */}
-        <HeaderNav>
+        <div>
           {headerLinks.map(({ pathname, name }) => (
             <Link key={pathname} href={pathname} passHref>
               <HeaderLink isActive={isPageActive(pathname)}>{name}</HeaderLink>
             </Link>
           ))}
-        </HeaderNav>
+        </div>
       </LogoWrapper>
 
       {/* Search input */}

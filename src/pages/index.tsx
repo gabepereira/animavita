@@ -1,11 +1,5 @@
 import TrendingSection from 'components/Home/TrendingSection';
 
-const Home = () => {
-  return (
-    <main>
-      <TrendingSection />
-    </main>
-  );
-};
+const Home = () => <TrendingSection />;
 
 export default Home;

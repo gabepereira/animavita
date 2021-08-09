@@ -9,12 +9,12 @@ export const headerLinks: HeaderNavLinks[] = [
     name: 'Home',
   },
   {
-    pathname: '/tvshows',
-    name: 'TV Shows',
-  },
-  {
     pathname: '/movies',
     name: 'Movies',
+  },
+  {
+    pathname: '/characters',
+    name: 'Characters',
   },
 ];
 

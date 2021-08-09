@@ -10,7 +10,7 @@ export const HeaderWrapper = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  background-color: #303030;
+  background-color: black;
 
   width: 100%;
   padding: 24px;
@@ -39,8 +39,6 @@ export const Logo = styled(Typography)`
     margin-right: 24px;
   }
 `;
-
-export const HeaderNav = styled.div``;
 
 export const HeaderLink = styled.a<HeaderLinkProps>`
   font-weight: ${({ isActive }) => (isActive ? 'bold' : '400')};
