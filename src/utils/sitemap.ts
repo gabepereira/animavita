@@ -9,8 +9,8 @@ export const headerLinks: HeaderNavLinks[] = [
     name: 'Home',
   },
   {
-    pathname: '/movies',
-    name: 'Movies',
+    pathname: '/manga',
+    name: 'Manga',
   },
   {
     pathname: '/characters',

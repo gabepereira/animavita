@@ -3,7 +3,7 @@ import api from 'services/api';
 import { HTTPResponseTrending } from './types';
 
 export const getTrending = (): Promise<AxiosResponse<HTTPResponseTrending>> => {
-  const query = `/trending/anime?limit=21`;
+  const query = `/trending/anime?limit=11`;
 
   return new Promise((resolve, reject) => {
     api
